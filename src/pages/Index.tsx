@@ -1,4 +1,3 @@
-
 import Navigation from "@/components/Navigation";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
@@ -11,9 +10,9 @@ const Index = () => {
       <Navigation />
       
       {/* Hero Section */}
-      <section className="relative py-24 px-4">
+      <section className="relative py-16 px-4">
         <div className="relative max-w-5xl mx-auto text-center">
-          <div className="mb-12">
+          <div className="mb-8">
             <div className="inline-block mb-6">
               <span className="text-6xl mb-4 block">🕉️</span>
               <h1 className="text-5xl md:text-6xl font-serif font-light text-amber-900 mb-8 tracking-wide">
@@ -36,7 +35,7 @@ const Index = () => {
       </section>
 
       {/* Krishna's Life Journey */}
-      <section className="py-20 px-4">
+      <section className="py-12 px-4">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-serif text-amber-900 mb-6 font-light">
