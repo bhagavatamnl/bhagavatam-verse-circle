@@ -20,15 +20,15 @@ const Index = () => {
         />
         <div className="relative max-w-6xl mx-auto text-center">
           <div className="mb-8">
-            <h1 className="text-5xl md:text-7xl font-bold bg-gradient-to-r from-amber-600 via-orange-500 to-red-500 bg-clip-text text-transparent mb-6">
-              Welcome to the Bhagavatam Reading Club
+            <h1 className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-amber-600 via-orange-500 to-red-500 bg-clip-text text-transparent mb-6">
+              Bhagavatam Reading Club
             </h1>
-            <p className="text-xl md:text-2xl text-slate-700 mb-8 max-w-4xl mx-auto leading-relaxed">
-              Join us to explore the teachings of the Bhagavatam in a warm and welcoming community.
+            <p className="text-lg md:text-xl text-slate-700 mb-8 max-w-3xl mx-auto leading-relaxed">
+              Explore the timeless teachings of the Bhagavatam in a warm and welcoming community.
             </p>
             <Button 
               onClick={() => window.open(whatsappLink, '_blank')}
-              className="bg-gradient-to-r from-green-500 to-green-600 hover:from-green-600 hover:to-green-700 text-white px-8 py-4 text-lg font-semibold rounded-full shadow-lg transform hover:scale-105 transition-all duration-200"
+              className="bg-gradient-to-r from-green-500 to-green-600 hover:from-green-600 hover:to-green-700 text-white px-6 py-3 text-base font-medium rounded-full shadow-lg transform hover:scale-105 transition-all duration-200"
             >
               🙏 Join the Group
             </Button>
