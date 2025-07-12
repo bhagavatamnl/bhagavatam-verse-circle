@@ -1,70 +1,64 @@
 
 import Navigation from "@/components/Navigation";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
+import { Download, BookOpen } from "lucide-react";
+import PdfViewer from "@/components/PdfViewer";
+import { useState } from "react";
 
 const Books = () => {
-  const cantos = [
+  const [selectedPdf, setSelectedPdf] = useState<{ url: string; title: string } | null>(null);
+
+  const volumes = [
     {
-      number: "Canto 1",
-      title: "Creation and Questions of Parikshit",
-      description: "The framework of the Bhagavatam, introducing the questions of King Parikshit and the answers of Sukadeva Goswami."
+      number: "Volume 1",
+      title: "Potana Bhagavatam Vol 1",
+      description: "The first volume of Potana's Telugu translation of the Srimad Bhagavatam, containing the divine wisdom and teachings.",
+      filename: "Potana Bhagavatam Vol 1.pdf",
+      downloadUrl: "/pdfs/Potana Bhagavatam Vol 1.pdf"
     },
     {
-      number: "Canto 2", 
-      title: "The Cosmic Manifestation",
-      description: "Description of the universal form and the process of creation from the Supreme Personality of Godhead."
+      number: "Volume 2", 
+      title: "Potana Bhagavatam Vol 2",
+      description: "The second volume of Potana's masterful translation, continuing the sacred narrative of the Bhagavatam.",
+      filename: "Potana Bhagavatam Vol 2.pdf",
+      downloadUrl: "/pdfs/Potana Bhagavatam Vol 2.pdf"
     },
     {
-      number: "Canto 3",
-      title: "The Status Quo", 
-      description: "Further details of creation and the appearance of Brahma and other demigods."
+      number: "Volume 3",
+      title: "Potana Bhagavatam Vol 3", 
+      description: "The third volume of this timeless work, preserving the essence of the original Sanskrit in beautiful Telugu poetry.",
+      filename: "Potana Bhagavatam Vol 3.pdf",
+      downloadUrl: "/pdfs/Potana Bhagavatam Vol 3.pdf"
     },
     {
-      number: "Canto 4",
-      title: "The Creation of the Fourth Order",
-      description: "Stories of great devotees like Dhruva and King Prithu, demonstrating devotional service."
+      number: "Volume 4",
+      title: "Potana Bhagavatam Vol 4",
+      description: "The fourth volume of Potana's Bhagavatam, a treasure trove of spiritual knowledge and divine stories.",
+      filename: "Potana Bhagavatam Vol 4.pdf",
+      downloadUrl: "/pdfs/Potana Bhagavatam Vol 4.pdf"
     },
     {
-      number: "Canto 5",
-      title: "The Creative Impetus",
-      description: "The story of King Rishabhadeva and his son Bharata, after whom India is named."
-    },
-    {
-      number: "Canto 6",
-      title: "Prescribed Duties for Mankind", 
-      description: "The glories of the holy name and stories of great devotees like Ajamila."
-    },
-    {
-      number: "Canto 7",
-      title: "The Science of God",
-      description: "The immortal story of Prahlada Maharaja and his devotion despite persecution."
-    },
-    {
-      number: "Canto 8",
-      title: "Withdrawal of the Cosmic Creations",
-      description: "Stories of the churning of the ocean and the appearance of various incarnations."
-    },
-    {
-      number: "Canto 9", 
-      title: "Liberation",
-      description: "The dynasties of great kings and devotees, including the ancestors of Lord Rama."
-    },
-    {
-      number: "Canto 10",
-      title: "The Summum Bonum", 
-      description: "The heart of the Bhagavatam - Krishna's appearance, childhood, youth, and pastimes."
-    },
-    {
-      number: "Canto 11",
-      title: "General History",
-      description: "Krishna's final instructions and the Uddhava Gita before His departure."
-    },
-    {
-      number: "Canto 12",
-      title: "The Age of Deterioration",
-      description: "Prophecies about Kali-yuga and the ultimate destruction and renewal of the universe."
+      number: "Volume 5",
+      title: "Potana Bhagavatam Vol 5",
+      description: "The fifth and final volume of Potana's complete translation of the Srimad Bhagavatam.",
+      filename: "Potana Bhagavatam Vol 5.pdf",
+      downloadUrl: "/pdfs/Potana Bhagavatam Vol 5.pdf"
     }
   ];
+
+  const handlePdfClick = (downloadUrl: string, filename: string) => {
+    // Open PDF in new tab
+    window.open(downloadUrl, '_blank');
+  };
+
+  const handleReadPdf = (downloadUrl: string, filename: string) => {
+    // Open PDF in embedded viewer
+    setSelectedPdf({
+      url: window.location.origin + downloadUrl,
+      title: filename
+    });
+  };
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-blue-50 via-purple-50 to-amber-50">
@@ -74,34 +68,61 @@ const Books = () => {
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-12">
             <h1 className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-amber-600 to-orange-500 bg-clip-text text-transparent mb-4">
-              The Twelve Cantos
+              Potana Bhagavatam Volumes
             </h1>
             <p className="text-xl text-slate-600 mb-8">
-              Explore the divine structure of the Srimad Bhagavatam's eighteen thousand verses
+              Explore the complete Telugu translation of the Srimad Bhagavatam by Potana
             </p>
           </div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
-            {cantos.map((canto, index) => (
+            {volumes.map((volume, index) => (
               <Card
                 key={index}
-                className="bg-white/80 backdrop-blur-sm border-amber-200 shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105"
+                className="bg-white/80 backdrop-blur-sm border-amber-200 shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 cursor-pointer"
+                onClick={() => handlePdfClick(volume.downloadUrl, volume.filename)}
               >
                 <CardHeader className="pb-3">
                   <div className="w-12 h-12 bg-gradient-to-br from-amber-400 to-orange-500 rounded-full flex items-center justify-center mb-3">
                     <span className="text-white font-bold">{index + 1}</span>
                   </div>
                   <CardTitle className="text-lg text-amber-800">
-                    {canto.number}
+                    {volume.number}
                   </CardTitle>
                   <p className="text-amber-600 font-medium text-sm">
-                    {canto.title}
+                    {volume.title}
                   </p>
                 </CardHeader>
                 <CardContent className="pt-0">
                   <p className="text-slate-600 text-sm leading-relaxed">
-                    {canto.description}
+                    {volume.description}
                   </p>
+                  <div className="mt-4 flex gap-2">
+                    <Button
+                      variant="outline"
+                      size="sm"
+                      className="flex-1 text-amber-600 hover:text-amber-700 hover:bg-amber-100 border-amber-200"
+                      onClick={(e) => {
+                        e.stopPropagation();
+                        handleReadPdf(volume.downloadUrl, volume.filename);
+                      }}
+                    >
+                      <BookOpen className="mr-2 h-4 w-4" />
+                      Read
+                    </Button>
+                    <Button
+                      variant="outline"
+                      size="sm"
+                      className="flex-1 text-amber-600 hover:text-amber-700 hover:bg-amber-100 border-amber-200"
+                      onClick={(e) => {
+                        e.stopPropagation();
+                        handlePdfClick(volume.downloadUrl, volume.filename);
+                      }}
+                    >
+                      <Download className="mr-2 h-4 w-4" />
+                      Download
+                    </Button>
+                  </div>
                 </CardContent>
               </Card>
             ))}
@@ -110,7 +131,7 @@ const Books = () => {
           <Card className="bg-white/80 backdrop-blur-sm border-amber-200 shadow-lg">
             <CardHeader>
               <CardTitle className="text-2xl text-amber-800 text-center">
-                The Crown Jewel: Canto 10
+                Potana's Masterpiece
               </CardTitle>
             </CardHeader>
             <CardContent className="text-center">
@@ -121,19 +142,29 @@ const Books = () => {
                 }}
               />
               <p className="text-lg text-slate-700 leading-relaxed mb-4">
-                The Tenth Canto is considered the heart and soul of the Srimad Bhagavatam. 
-                It contains the complete narration of Lord Krishna's earthly pastimes, from His 
-                divine birth to His return to the spiritual realm.
+                Potana's Telugu translation of the Srimad Bhagavatam is considered one of the greatest 
+                literary works in Telugu literature. His poetic genius brings the divine wisdom 
+                of the original Sanskrit text to life in beautiful Telugu verse.
               </p>
               <p className="text-lg text-slate-700 leading-relaxed">
-                This canto alone contains nearly 4,000 verses and is divided into 90 chapters, 
-                each revealing different aspects of Krishna's divine nature through His loving 
-                interactions with devotees, His miraculous pastimes, and His profound teachings.
+                These five volumes contain the complete translation, preserving the essence and 
+                spiritual depth of the original while making it accessible to Telugu-speaking devotees 
+                and scholars throughout the centuries.
               </p>
             </CardContent>
           </Card>
         </div>
       </div>
+      
+      {/* PDF Viewer Modal */}
+      {selectedPdf && (
+        <PdfViewer
+          isOpen={!!selectedPdf}
+          onClose={() => setSelectedPdf(null)}
+          pdfUrl={selectedPdf.url}
+          title={selectedPdf.title}
+        />
+      )}
     </div>
   );
 };
