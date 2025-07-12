@@ -116,12 +116,19 @@ const Contact = () => {
                   <p className="text-slate-700">
                     For immediate questions or to join our WhatsApp group, click below:
                   </p>
-                  <Button 
-                    className="w-full bg-green-500 hover:bg-green-600 text-white"
-                    onClick={() => window.open("https://wa.me/+1234567890", '_blank')}
+                  <a 
+                    href="https://chat.whatsapp.com/DSGcqvLADBR91kLomyqoBo" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="block w-full"
                   >
-                    Join WhatsApp Group
-                  </Button>
+                    <Button 
+                      className="w-full bg-green-500 hover:bg-green-600 text-white"
+                      type="button"
+                    >
+                      Join WhatsApp Group 💬
+                    </Button>
+                  </a>
                 </CardContent>
               </Card>
 
