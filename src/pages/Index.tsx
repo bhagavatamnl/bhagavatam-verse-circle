@@ -24,8 +24,9 @@ const Index = () => {
                 "Explore the timeless teachings of the Bhagavatam in a warm and welcoming community"
               </p>
             </div>
+            
             <Button 
-              onClick={() => window.open(whatsappLink, '_blank')}
+              onClick={() => window.open("https://chat.whatsapp.com/DSGcqvLADBR91kLomyqoBo", '_blank')}
               className="bg-amber-600 hover:bg-amber-700 text-white px-8 py-4 text-lg font-medium rounded-md shadow-md hover:shadow-lg transition-all duration-300 border-2 border-amber-700"
             >
               🙏 Join Our Sacred Circle
