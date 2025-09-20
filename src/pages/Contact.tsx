@@ -29,15 +29,15 @@ const Contact = () => {
               <CardContent className="space-y-3">
                 <div>
                   <p className="font-medium text-amber-800">Weekly Meetings:</p>
-                  <p className="text-slate-600">Every Sunday at 10:00 AM</p>
+                  <p className="text-slate-600">Every Saturday at 6:00 AM</p>
                 </div>
                 <div>
                   <p className="font-medium text-amber-800">Location:</p>
-                  <p className="text-slate-600">Community Center or Online</p>
+                  <p className="text-slate-600">Watsapp</p>
                 </div>
                 <div>
                   <p className="font-medium text-amber-800">Duration:</p>
-                  <p className="text-slate-600">2 hours with refreshments</p>
+                  <p className="text-slate-600">1 hour </p>
                 </div>
               </CardContent>
             </Card>
@@ -48,7 +48,7 @@ const Contact = () => {
               </CardHeader>
               <CardContent className="space-y-4">
                 <p className="text-slate-700">
-                  For immediate questions or to join our WhatsApp group, click below:
+                  For regular weekly readings, join our WhatsApp group, click below:
                 </p>
                 <a
                   href="https://chat.whatsapp.com/DSGcqvLADBR91kLomyqoBo"
