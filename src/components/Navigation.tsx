@@ -15,6 +15,7 @@ const Navigation = () => {
     { path: "/books", label: "Books", icon: Book },
     { path: "/links", label: "Links", icon: LinkIcon },
     { path: "/contact", label: "Contact", icon: Contact },
+    { path: "/events", label: "Event", icon: Contact }
   ];
 
   // Close mobile menu when clicking outside

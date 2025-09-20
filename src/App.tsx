@@ -11,6 +11,7 @@ import Books from "./pages/Books";
 import Links from "./pages/Links";
 import Contact from "./pages/Contact";
 import NotFound from "./pages/NotFound";
+import Events from "./pages/Events";
 
 const queryClient = new QueryClient();
 
@@ -27,6 +28,7 @@ const App = () => (
           <Route path="/books" element={<Books />} />
           <Route path="/links" element={<Links />} />
           <Route path="/contact" element={<Contact />} />
+          <Route path="/events" element={<Events />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>
